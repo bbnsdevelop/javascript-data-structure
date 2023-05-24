@@ -3,20 +3,32 @@ const everyone = ['dory', 'bruce', 'marlin', 'nemo', 'gill', 'bloat', 'nigel', '
 const large = Array(10000).fill('nemo');
 
 function findNemo(array){  
-    let time0 = performance.now();  
-   
     for(let i = 0; i < array.length; i++){
         if(array[i] === 'nemo'){
             console.log('Found Nemo'); 
-            break    
+            break 
         }
     }
 
-    let time1 = performance.now();
+    //ES5
+    /*
+    array.forEach(function(item){
+        if(item === 'nemo'){
+            console.log('Found Nemo');                         
+        }
+    });
+    */
 
-    console.log(`Call to find nem took ${(time1 - time0)} milliseconds`)
+    // ES6
+    /*
+    array.forEach(element => {
+        if(element === 'nemo'){
+            console.log('Found Nemo');                         
+        }
+    });
+    */
 }
 
 // findNemo(nemo);
-// findNemo(everyone);
-findNemo(large);
+findNemo(everyone);
+//findNemo(large);
