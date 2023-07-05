@@ -23,7 +23,12 @@ function reverse1(){
     console.log(name.split("").reverse().join(""));
 }
 
+const reverse2 = str => [... str].reverse().join('');
+
 
 
 reverse();
 reverse1();
+
+
+console.log(reverse2("Bruno"));
